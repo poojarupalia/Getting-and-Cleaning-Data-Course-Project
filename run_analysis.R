@@ -9,7 +9,7 @@ unzip(zipfile="./data/Dataset.zip",exdir="./data")
 
 #Merges the training and the test sets to create one data set.
 #Reading files
-#Reading trainings tables:
+#Reading training tables:
 
 x_train <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
 y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt")
@@ -57,7 +57,7 @@ mean_and_std <- (grepl("activityId" , colNames) |
                    grepl("std.." , colNames) 
 )
 
-#Making nessesary subset from setAllInOne:
+#Making necessary subset from setAllInOne:
 
 setForMeanAndStd <- setAllInOne[ , mean_and_std == TRUE]
 
@@ -68,7 +68,7 @@ setWithActivityNames <- merge(setForMeanAndStd, activityLabels,
 
 
 #Appropriately labels the data set with descriptive variable names.
-#Done in previous steps, see 1.3,2.2 and 2.3!
+#Done in previous steps
 
 
 ##From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
